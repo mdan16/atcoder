@@ -2,8 +2,8 @@
 using namespace std;
 using ll = long long;
 
-#define FOR(i,a,b)  for(ll (i)=a;(i)<(b);++(i))
-#define RFOR(i,a,b) for(ll (i)=a;(i)>=(b);--(i))
+#define FOR(i,a,b)  for(ll i=a;(i)<(b);++(i))
+#define RFOR(i,a,b) for(ll i=a;(i)>=(b);--(i))
 #define REP(i,n)    FOR(i,0,n)
 #define RREP(i,n)   RFOR(i,n,0)
 #define ALL(v)      v.begin(), v.end()
