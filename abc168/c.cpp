@@ -14,9 +14,23 @@ using ll = long long;
 const ll inf = 1e15;
 const ll mod = 1e9+7;
 
+const double PI = acos(-1);
+
 int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
 int main() {
     int A, B, H, M;
+    cin >> A >> B >> H >> M;
+    double dh = double(60*H+M)/720 * 2*PI;
+    double dm = double(M)/60 * 2*PI;
+    double xh = A*cos(dh), yh = A*sin(dh);
+    double xm = B*cos(dm), ym = B*sin(dm);
+
+    double dx = xh - xm, dy = yh - ym;
+    double ans = sqrt(dx*dx + dy*dy);
+
+    printf("%.10f\n", ans);
+
+    return 0;
 }
