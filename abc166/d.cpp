@@ -9,7 +9,7 @@ using ll = long long;
 #define ALL(v)      v.begin(), v.end()
 #define UNIQ(v)     sort(ALL(v)); v.erase(unique(ALL(v)), v.end())
 #define BIT(n)      (1LL<<(n))
-#define DEBUG(a)    cerr << #a << " = " << a << endl
+#define DEBUG(a)    cout << #a << " = " << a << endl
 
 const int inf = 1001001001;
 const int mod = (int)1e9+7;
@@ -20,5 +20,25 @@ int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
 int main() {
+    int X;
+    cin >> X;
+    //RFOR(i, 0, -1*inf) {
+    //    A = i;
+    //    B = A - 1;
+    //    int X = pow(A, 5) - pow(B, 5);
+    //    if (X > 1000000001) break;
+    //}
+    //DEBUG(A);
 
+    int A, B;
+    FOR(i, -120, 120) {
+        FOR(j, -120, 120) {
+            if(pow(i, 5) - pow(j, 5) == X) {
+                A = i;
+                B = j;
+            }
+        }
+    }
+
+    cout << A << " " << B << endl;
 }
