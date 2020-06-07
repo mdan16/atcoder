@@ -11,7 +11,6 @@ using ll = long long;
 #define BIT(n)      (1LL<<(n))
 #define DEBUG(a)    cerr << #a << " = " << a << endl
 
-const double PI = acos(-1);
 const int inf = 1001001001;
 const int mod = (int)1e9+7;
 //const ll inf = 1e15;
@@ -21,5 +20,25 @@ int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
 int main() {
+    string s;
+    cin >> s;
+    string rs = s;
+    int l = s.size();
+    reverse(ALL(rs));
 
+    string kai = s.substr(0, (l-1)/2);
+    while (kai.size() > 1) {
+        if (kai.back() != kai.front()) {
+            cout << "No" << endl;
+            return 0;
+        }
+        kai.pop_back();
+        kai.erase(0, 1);
+    }
+
+    if (s.substr(0, (l-1)/2) == rs.substr(0, (l-1)/2)) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
 }

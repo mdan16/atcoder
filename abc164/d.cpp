@@ -11,7 +11,6 @@ using ll = long long;
 #define BIT(n)      (1LL<<(n))
 #define DEBUG(a)    cerr << #a << " = " << a << endl
 
-const double PI = acos(-1);
 const int inf = 1001001001;
 const int mod = (int)1e9+7;
 //const ll inf = 1e15;
@@ -20,6 +19,22 @@ const int mod = (int)1e9+7;
 int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
-int main() {
+const int m = 2019;
 
+int main() {
+    string S;
+    cin >> S;
+    int n = S.size();
+    reverse(ALL(S));
+    int x = 1, total = 0;
+    vector<int> cnt(m);
+    ll ans = 0;
+    REP(i, n) {
+        cnt[total]++;
+        total += (S[i]-'0')*x;
+        total %= m;
+        ans += cnt[total];
+        x = x*10%m;
+    }
+    cout << ans << endl;
 }

@@ -11,7 +11,6 @@ using ll = long long;
 #define BIT(n)      (1LL<<(n))
 #define DEBUG(a)    cerr << #a << " = " << a << endl
 
-const double PI = acos(-1);
 const int inf = 1001001001;
 const int mod = (int)1e9+7;
 //const ll inf = 1e15;
@@ -21,5 +20,19 @@ int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
 int main() {
+    int A, B, C, D;
+    cin >> A >> B >> C >> D;
 
+    while(A > 0 && C > 0) {
+        C -= B;
+        A -= D;
+    }
+
+    if (C <= 0 && A <= 0) {
+        cout << "Yes" << endl;
+    } else if (C <= 0) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
 }

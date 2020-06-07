@@ -11,7 +11,6 @@ using ll = long long;
 #define BIT(n)      (1LL<<(n))
 #define DEBUG(a)    cerr << #a << " = " << a << endl
 
-const double PI = acos(-1);
 const int inf = 1001001001;
 const int mod = (int)1e9+7;
 //const ll inf = 1e15;
@@ -21,5 +20,16 @@ int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
 int main() {
+    int N, M;
+    cin >> N >> M;
+    vector<int> A(N);
+    REP(i, N) {
+        cin >> A[i];
+    }
+    int sum = accumulate(ALL(A), 0);
+    double min = (double)sum / (4*M);
 
+    int select = count_if(ALL(A), [min](int i) { return i >= min; });
+    if (select >= M) cout << "Yes" << endl;
+    else cout << "No" << endl;
 }

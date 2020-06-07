@@ -11,7 +11,6 @@ using ll = long long;
 #define BIT(n)      (1LL<<(n))
 #define DEBUG(a)    cerr << #a << " = " << a << endl
 
-const double PI = acos(-1);
 const int inf = 1001001001;
 const int mod = (int)1e9+7;
 //const ll inf = 1e15;
@@ -21,5 +20,15 @@ int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
 int main() {
+    int X;
+    cin >> X;
 
+    int coin[] = { 500, 5, 1 };
+    int num[3] = { 0 };
+    REP (i, sizeof(coin)/sizeof(int)) {
+        num[i] = X / coin[i];
+        X -= coin[i] * num[i];
+    }
+
+    cout << num[0]*1000 + num[1]*5 << endl;
 }
