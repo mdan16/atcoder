@@ -20,27 +20,17 @@ const int mod = (int)1e9+7;
 int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
+string s;
 int main() {
-    int n;
-    cin >> n;
-    int a[n];
-    REP(i, n) {
-        cin >> a[i];
-        a[i]--;
-    }
-
-    int on = 0;
-    int count = 0;
-    while (true) {
-        if (on == 1) {
-            cout << count << endl;
-            return 0;
+    cin >> s;
+    ll count = 0;
+    ll b_num = 0;
+    REP(i, s.length()) {
+        if (s[i] == 'B') {
+            b_num++;
+        } else {
+            count += b_num;
         }
-        if (count > n) {
-            cout << -1 << endl;
-            return 0;
-        }
-        on = a[on];
-        count++;
     }
+    cout << count << endl;
 }

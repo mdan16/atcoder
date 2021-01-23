@@ -20,28 +20,6 @@ const int mod = (int)1e9+7;
 int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
-int dp[100001] = {0};
-
-int n;
-
 int main() {
-    cin >> n;
-    vector<int> coin = {9, 6, 1};
 
-    dp[0] = 0;
-    FOR(i, 1, n+1) {
-        dp[i] = dp[i-1] + 1;
-        int power = 6;
-        while(power <= i) {
-            dp[i] = min(dp[i], dp[i-power] + 1);
-            power *= 6;
-        }
-        power = 9;
-        while(power <= i) {
-            dp[i] = min(dp[i], dp[i-power] + 1);
-            power *= 9;
-        }
-        //cout << dp[i] << endl;
-    }
-    cout << dp[n] << endl;
 }
