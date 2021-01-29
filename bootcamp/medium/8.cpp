@@ -17,14 +17,23 @@ const int mod = (int)1e9+7;
 //const ll inf = 1e15;
 //const ll mod = 1e9+7;
 
+// aとbの最大公約数
+long long gcd(long long a, long long b) {
+    if (b == 0) return a;
+    else return gcd(b, a%b);
+}
+
 int dy[] = {0, 0, 1, -1};
 int dx[] = {1, -1, 0, 0};
 
 int main() {
-    int n;
-    cin >> n;
-    ll ans = 0;
-    REP(i, n) ans += i;
+    ll a, b, c;
+    cin >> a >> b >> c;
 
-    cout << ans << endl;
+    ll g = gcd(a, b);
+    if (c % g == 0) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
 }

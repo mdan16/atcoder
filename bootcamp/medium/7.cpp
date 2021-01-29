@@ -22,9 +22,25 @@ int dx[] = {1, -1, 0, 0};
 
 int main() {
     int n;
+    string s;
     cin >> n;
-    ll ans = 0;
-    REP(i, n) ans += i;
+    cin >> s;
 
+    int ans = 0;
+    REP(i, n-1) {
+        string a = s.substr(0, i+1);
+        string b = s.substr(i+1);
+        int count = 0;
+        FOR(i, (ll)'a', (ll)'z' + 1) {
+            if (a.find((char)i) == -1) {
+                continue;
+            }
+            if (b.find((char)i) == -1) {
+                continue;
+            }
+            count++;
+        }
+        ans = max(ans, count);
+    }
     cout << ans << endl;
 }
